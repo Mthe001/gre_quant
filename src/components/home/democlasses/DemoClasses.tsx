@@ -210,6 +210,7 @@ import {
 } from "../../ui/dialog";
 import { Card, CardDescription, CardHeader, CardTitle } from "../../ui/card";
 import Image from "next/image"; // Import next/image
+import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -340,15 +341,37 @@ export default function DemoClasses() {
                     </DialogDescription>
                   </DialogHeader>
                   <div className="grid gap-4 py-4">
-                    <div className="relative aspect-video w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Play className="h-16 w-16 text-orange-500" />
-                      </div>
+                    <div className="relative">
+                      <HeroVideoDialog
+                        className="block dark:hidden"
+                        animationStyle="from-center"
+                        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                        thumbnailAlt="Hero Video"
+                      />
+                      <HeroVideoDialog
+                        className="hidden dark:block"
+                        animationStyle="from-center"
+                        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                        thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                        thumbnailAlt="Hero Video"
+                      />
                     </div>
+                    
                     <Tabs defaultValue="overview">
-                      <TabsList className="grid w-full grid-cols-2">
-                        <TabsTrigger value="overview">Overview</TabsTrigger>
-                        <TabsTrigger value="resources">Resources</TabsTrigger>
+                      <TabsList className="grid w-full gap-3  grid-cols-2">
+                        <TabsTrigger
+                          className="border p-1 rounded-md"
+                          value="overview"
+                        >
+                          Overview
+                        </TabsTrigger>
+                        <TabsTrigger
+                          className="border p-1 rounded-md"
+                          value="resources"
+                        >
+                          Resources
+                        </TabsTrigger>
                       </TabsList>
                       <TabsContent value="overview" className="space-y-4 pt-4">
                         <p>{demoClass.description}</p>
