@@ -105,7 +105,7 @@ const UpcomingBatch = () => {
               className="relative"
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
             >
-              <Card className="h-full border dark:border-orange-800 text-zinc-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="h-full border dark:border-orange-800 text-orange-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 {index === 0 && batch.thumbnail && (
                   <div className="relative h-auto">
                     <Image
