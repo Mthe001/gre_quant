@@ -112,8 +112,8 @@ export default function Testimonials() {
     testimonialApi && testimonialApi.scrollNext();
 
   return (
-    <section className="bg-white py-20 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section className="py-20 ">
+      <div className="container mx-auto p-16 border-t border-b ">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -150,7 +150,7 @@ export default function Testimonials() {
                   key={testimonial.id}
                   className="min-w-0 flex-[0_0_100%] px-4 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
                 >
-                  <Card className="h-full bg-gray-50 dark:bg-gray-800">
+                  <Card className="h-full hover:border-orange-700 hover:transition-colors ">
                     <CardHeader className="flex flex-row items-center gap-4 pb-2">
                       <div className="relative h-12 w-12 overflow-hidden rounded-full">
                         <Image

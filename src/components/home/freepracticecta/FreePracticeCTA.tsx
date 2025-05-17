@@ -10,8 +10,8 @@ const fadeIn = {
 
 export default function FreePracticeCTA() {
   return (
-    <section className="bg-gradient-to-r from-orange-500 to-orange-600 py-16 dark:from-orange-700 dark:to-orange-800">
-      <div className="container mx-auto px-4">
+    <section className="bg-gradient-to-r from-orange-500 to-orange-600 py-16  ">
+      <div className="container mx-auto m-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -29,7 +29,7 @@ export default function FreePracticeCTA() {
               explanations.
             </p>
           </div>
-          <Button size="lg" variant="secondary" className="whitespace-nowrap">
+          <Button size="lg" variant="outline" className="whitespace-nowrap border-orange-600">
             Access Question Bank
           </Button>
         </motion.div>

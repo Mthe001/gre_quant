@@ -1,32 +1,29 @@
-"use client";
+"use client"; // Mark as client component
 
-import { ReactLenis, useLenis } from "lenis/react"; // Updated import path
-import { ReactNode, useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ReactLenis, LenisRef } from "lenis/react";
+import { FC, ReactNode, useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-interface LenisProviderProps {
+interface LenisScrollProviderProps {
   children: ReactNode;
 }
 
-export default function LenisProvider({ children }: LenisProviderProps) {
-  const lenis = useLenis();
-
-  useEffect(() => {
-    if (lenis) {
-      lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-      gsap.ticker.lagSmoothing(0);
-    }
-  }, [lenis]);
+const LenisScrollProvider: FC<LenisScrollProviderProps> = ({ children }) => {
+  const lenisRef = useRef<LenisRef | null>(null);
 
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
+    <ReactLenis
+      ref={lenisRef}
+      root
+      options={{
+        lerp: 0.1, // Smoothness factor (0 to 1, lower is smoother)
+        duration: 1.5, // Duration of scroll animation
+        smoothWheel: true, // Enable smooth scrolling for mouse wheel
+        touchMultiplier: 2, // Multiplier for touch scrolling speed
+      }}
+    >
       {children}
     </ReactLenis>
   );
-}
+};
+
+export default LenisScrollProvider;

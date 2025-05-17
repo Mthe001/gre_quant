@@ -64,13 +64,13 @@ import {
   PT_Sans,
 } from "next/font/google";
 import "./globals.css";
-
+import { ThemeProvider } from "@/provider/theme-provider";
 import Loading from "./loading";
-import { ThemeProvider } from "../provider/theme-provider";
-import Navbar from "../shared/Navbar";
+import Navbar from "@/shared/Navbar";
 
-import Footer from "../shared/Footer";
-import LenisProvider from "../provider/lenis-provider";
+import Footer from "@/shared/Footer";
+import LenisScrollProvider from "@/provider/lenis-provider";
+
 
 // Define fonts with weights, subsets, and CSS variables
 const spaceGrotesk = Space_Grotesk({
@@ -247,7 +247,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Navbar />
           </section>
 
-          <LenisProvider>{children}</LenisProvider>
+          <LenisScrollProvider>{children}</LenisScrollProvider>
 
           {/* footer of GRE quant */}
           <section>

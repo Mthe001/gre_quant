@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Award, BookOpen, GraduationCap, TrendingUp } from "lucide-react";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -15,8 +16,8 @@ const staggerContainer = {
 
 export default function StatsSection() {
   return (
-    <section className="bg-white py-20 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section className="py-20">
+      <div className="container relative mx-auto p-8 border rounded-md ">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -65,6 +66,7 @@ export default function StatsSection() {
             </p>
           </motion.div>
         </motion.div>
+        <BorderBeam duration={9} size={200} />
       </div>
     </section>
   );

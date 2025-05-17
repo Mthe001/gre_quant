@@ -1,6 +1,3 @@
-
-
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -29,7 +26,7 @@ const fadeIn = {
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-orange-50 to-white py-20 dark:from-gray-900 dark:to-gray-800">
+    <section className="relative overflow-hidden bg-gradient-to-br  py-20 border-b-2 rounded-b-xl">
       <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-orange-100 opacity-50 blur-3xl dark:bg-orange-900"></div>
       <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-blue-100 opacity-30 blur-3xl dark:bg-blue-900"></div>
 
@@ -69,10 +66,13 @@ export default function HeroSection() {
               >
                 Explore Courses
               </Button>
+
+            
+
               <Button
                 size="lg"
                 variant="outline"
-                className="border-orange-500 text-orange-500 hover:bg-orange-50 dark:border-orange-400 dark:text-orange-400 dark:hover:bg-orange-950"
+                className="border-orange-500 rounded-full text-orange-500 hover:bg-orange-50 dark:border-orange-400 dark:text-orange-400 dark:hover:bg-orange-950"
               >
                 Free Trial Class
               </Button>

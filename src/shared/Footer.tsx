@@ -11,6 +11,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 export default function Footer() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
@@ -66,7 +68,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 text-white"
+      className=" border-t rounded-t-xl dark:text-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -97,16 +99,18 @@ export default function Footer() {
               transition={{ type: "spring", stiffness: 300 }}
               className="w-32"
             >
-              <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow-lg">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-full w-full text-[#F28C38]"
-                  fill="currentColor"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-              </div>
+              <Image
+                src={"/images/logo.png"}
+                className="w-auto"
+                width={80}
+                height={80}
+                alt="gre quant school logo"
+              />
             </motion.div>
+            {/* mode toggle for switching color */}
+            <div>
+              <ModeToggle/>
+            </div>
           </motion.div>
 
           {/* Contact Section */}
@@ -136,7 +140,7 @@ export default function Footer() {
                   </motion.div>
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+                    className="text-black/60 dark:text-orange-100 hover:text-orange-600  font-semibold transition-colors duration-200 text-sm"
                   >
                     {item.text}
                   </Link>
@@ -176,7 +180,7 @@ export default function Footer() {
                       className="flex items-center"
                     >
                       <ChevronRight className="h-4 w-4 text-[#F28C38] mr-2" />
-                      <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
+                      <span className="text-gray-300 hover:text-orange-600 font-semibold transition-colors duration-200">
                         {link.name}
                       </span>
                     </motion.div>
@@ -202,7 +206,7 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center text-sm text-gray-400"
         >
-          <p>copyright@mathsprintschool_{new Date().getFullYear()}</p>
+          <p>copyright@grequantschool_{new Date().getFullYear()}</p>
         </motion.div>
       </div>
 

@@ -6,6 +6,7 @@ import {  Button } from "@/components/ui/button";
 import { Phone, Mail, MessageSquare, TrendingUp } from "lucide-react";
 import { Badge } from "../../ui/badge";
 import { Card, CardContent } from "../../ui/card";
+import { ShineBorder } from "@/components/magicui/shine-border";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -19,11 +20,12 @@ const staggerContainer = {
 
 export default function ConnectMentor() {
   return (
-    <section className="relative overflow-hidden bg-gray-50 py-20 dark:bg-gray-800">
+    <section className="relative overflow-hidden  py-20 ">
       <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-orange-100 opacity-30 blur-3xl dark:bg-orange-900/20"></div>
       <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-blue-100 opacity-20 blur-3xl dark:bg-blue-900/20"></div>
 
-      <div className="container relative mx-auto px-4">
+      <div className="container w-full overflow-hidden relative border-orange-900 border-t border-b  rounded-lg  mx-auto p-10">
+      <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -51,7 +53,7 @@ export default function ConnectMentor() {
             className="grid grid-cols-2 gap-4 sm:grid-cols-4"
           >
             <motion.div variants={fadeIn}>
-              <Card className="group h-full transition-all duration-300 hover:shadow-md dark:bg-gray-800">
+              <Card className="group h-full transition-all duration-300 hover:shadow-md cursor-pointer">
                 <CardContent className="flex flex-col items-center justify-center p-6">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white dark:bg-orange-900/30">
                     <Phone className="h-8 w-8" />
@@ -64,7 +66,7 @@ export default function ConnectMentor() {
               </Card>
             </motion.div>
             <motion.div variants={fadeIn}>
-              <Card className="group h-full transition-all duration-300 hover:shadow-md dark:bg-gray-800">
+              <Card className="group h-full transition-all duration-300 hover:shadow-md cursor-pointer">
                 <CardContent className="flex flex-col items-center justify-center p-6">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white dark:bg-orange-900/30">
                     <Mail className="h-8 w-8" />
@@ -77,7 +79,7 @@ export default function ConnectMentor() {
               </Card>
             </motion.div>
             <motion.div variants={fadeIn}>
-              <Card className="group h-full transition-all duration-300 hover:shadow-md dark:bg-gray-800">
+              <Card className="group h-full transition-all duration-300 hover:shadow-md cursor-pointer">
                 <CardContent className="flex flex-col items-center justify-center p-6">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white dark:bg-orange-900/30">
                     <MessageSquare className="h-8 w-8" />
@@ -90,7 +92,7 @@ export default function ConnectMentor() {
               </Card>
             </motion.div>
             <motion.div variants={fadeIn}>
-              <Card className="group h-full transition-all duration-300 hover:shadow-md dark:bg-gray-800">
+              <Card className="group h-full transition-all duration-300 hover:shadow-md cursor-pointer">
                 <CardContent className="flex flex-col items-center justify-center p-6">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white dark:bg-orange-900/30">
                     <TrendingUp className="h-8 w-8" />
@@ -107,12 +109,14 @@ export default function ConnectMentor() {
           <motion.div variants={fadeIn} className="mt-10">
             <Button
               size="lg"
-              className="bg-orange-500 text-white hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700"
+              variant="outline"
+              
             >
               Schedule a Free Consultation
             </Button>
           </motion.div>
         </motion.div>
+         
       </div>
     </section>
   );
