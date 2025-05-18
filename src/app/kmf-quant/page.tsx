@@ -7,6 +7,9 @@ import { SectionCard } from "@/components/kmf-quest/Section-card";
 import { questionBank } from "./data";
 import { useSearchParams } from "next/navigation";
 
+import { VideoExplanations } from "@/components/kmfQuant-video-explain/video-explanations";
+import { Button } from "@/components/ui/button";
+
 interface Section {
   id: string;
   number: number;
@@ -94,24 +97,25 @@ export default function Home() {
   // Check if we have any results
   const hasResults = filteredSections.length > 0;
 
+ 
   // Filter button component
   const FilterButton = ({ label }: { label: DifficultyFilter }) => (
-    <button
-      className={`px-3 py-1 rounded-full backdrop-blur-sm border text-sm transition-all ${
+    <Button
+      className={`px-3 py-1 rounded-full backdrop-blur-sm border text-sm transition-all duration-200 ${
         difficultyFilter === label
           ? label === "Medium"
-            ? "bg-blue-500/20 border-blue-500/50 text-blue-600 dark:text-blue-300"
+            ? "bg-blue-600/30 border-blue-600/40 text-blue-600 dark:text-blue-300"
             : label === "Hard"
-            ? "bg-orange-500/20 border-orange-500/50 text-orange-600 dark:text-orange-300"
+            ? "bg-orange-600/30 border-orange-600/40 text-orange-600 dark:text-orange-300"
             : label === "Research"
-            ? "bg-purple-500/20 border-purple-500/50 text-purple-600 dark:text-purple-300"
-            : "bg-primary/20 border-primary/50 text-primary"
-          : "bg-card/50 border-border hover:bg-card/80"
+            ? "bg-purple-600/30 border-purple-600/40 text-purple-600 dark:text-purple-300"
+            : "bg-gray-600/30 border-gray-600/40 text-gray-600 dark:text-gray-300"
+          : "bg-gray-200/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300/80 dark:hover:bg-gray-700/80"
       }`}
       onClick={() => setDifficultyFilter(label)}
     >
       {label}
-    </button>
+    </Button>
   );
 
   return (
@@ -181,6 +185,9 @@ export default function Home() {
             </div>
           </section>
         )}
+        <main className="container py-8">
+          <VideoExplanations />
+        </main>
       </div>
     </main>
   );
