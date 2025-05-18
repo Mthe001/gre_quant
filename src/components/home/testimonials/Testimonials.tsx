@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
