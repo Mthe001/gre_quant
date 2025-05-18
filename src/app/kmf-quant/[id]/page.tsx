@@ -194,7 +194,6 @@ export default function KMFQuantPage() {
           </div>
         </div>
       </header>
-
       <div key={resetKey} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {questions.length > 0 ? (
           questions.map((question) => (
@@ -217,16 +216,19 @@ export default function KMFQuantPage() {
           </p>
         )}
       </div>
-
-      <ResultsModal
-        isOpen={isCompleted}
-        onClose={handleModalClose}
-        correct={correct}
-        wrong={wrong}
-        skipped={skipped}
-        totalTime={totalTime}
-        timeRemaining={timeRemaining}
-      />
+    
+ <ResultsModal
+  isOpen={isCompleted}
+  onClose={handleModalClose}
+  correct={correct}
+  wrong={wrong}
+  skipped={skipped}
+  totalTime={totalTime}
+  timeRemaining={timeRemaining}
+  questions={questions}
+  answers={answers}
+ />
+      
     </div>
   );
 }

@@ -48,6 +48,29 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
+
+body, html {
+  overflow: unset !important;
+}
+
+.scrollbar-visible {
+  scrollbar-width: auto;
+  
+  -webkit-overflow-scrolling: touch;
+}
+.scrollbar-visible::-webkit-scrollbar {
+  width: 12px;
+}
+.scrollbar-visible::-webkit-scrollbar-track {
+  background: #000103;
+}
+.scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: #f77811;
+  border-radius: 6px;
+  border: 3px solid #000205;
+}
+
+
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }

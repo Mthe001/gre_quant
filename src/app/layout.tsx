@@ -241,18 +241,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <Loading />
-          {/* Navbar of GRE quant */}
-          <section>
-            <Navbar />
-          </section>
+          <LenisScrollProvider>
+            <Loading />
+            {/* Navbar of GRE quant */}
+            <section>
+              <Navbar />
+            </section>
 
-          <LenisScrollProvider>{children}</LenisScrollProvider>
+            
+            {children}
 
-          {/* footer of GRE quant */}
-          <section>
-            <Footer />
-          </section>
+            {/* footer of GRE quant */}
+            <section>
+              <Footer />
+            </section>
+          </LenisScrollProvider>
         </ThemeProvider>
       </body>
     </html>
