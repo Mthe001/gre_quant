@@ -14,7 +14,7 @@ import {
   DialogTrigger,
 } from "../../ui/dialog";
 import { Card, CardDescription, CardHeader, CardTitle } from "../../ui/card";
-import Image from "next/image"; // Import next/image
+import Image from "next/image";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 const fadeIn = {
@@ -31,38 +31,50 @@ const demoClasses = [
   {
     id: 1,
     title: "Triangles Problems",
-    thumbnail: "/images/photo.png",
-    duration: "24 minutes",
-    instructor: "Dr. Sarah Chen",
+    thumbnail: "/images/triangles-thumb.png",
+    videoSrc: "https://www.youtube.com/embed/19QvXF7IIvM?si=HgqDA0gqzsNOD2l0",
+    duration: "1:45:21",
+    instructor: "Shourav Simantha",
     description:
       "Learn essential strategies for solving triangle problems on the GRE. Covers special triangles, similar triangles, and area calculations.",
+    learningPoints: [
+      "Properties of special triangles (30-60-90, 45-45-90)",
+      "Similarity and congruence rules",
+      "Area and perimeter calculations",
+      "Applications in GRE problem-solving",
+    ],
   },
   {
     id: 2,
     title: "Circles and Cylinders",
-    thumbnail: "/images/photo.png",
-    duration: "18 minutes",
-    instructor: "Prof. Michael Johnson",
+    thumbnail: "/images/circle-thumb.png",
+    videoSrc: "https://www.youtube.com/embed/ctqALQOI0pc?si=Z5pW8Vdc4_jdubnU",
+    duration: "1:46:50",
+    instructor: "Shourav Simantha",
     description:
       "Master circle properties, arc lengths, sector areas, and cylinder volume calculations for the GRE Quant section.",
+    learningPoints: [
+      "Circle properties and theorems",
+      "Arc length and sector area formulas",
+      "Cylinder volume and surface area",
+      "Practical GRE quant applications",
+    ],
   },
   {
     id: 3,
     title: "Word Problems",
-    thumbnail: "/images/photo.png",
-    duration: "22 minutes",
-    instructor: "Dr. Emily Wong",
+    thumbnail: "/images/word-problems-thumb.png",
+    videoSrc: "https://www.youtube.com/embed/sj5QYvRJifQ?si=TMy2ATrrg4PaOerX",
+    duration: "1:13:00",
+    instructor: "Shourav Simantha",
     description:
       "Learn systematic approaches to solve complex word problems, including rate, work, and mixture problems.",
-  },
-  {
-    id: 4,
-    title: "Two-Variable Word Problems",
-    thumbnail: "/images/photo.png",
-    duration: "26 minutes",
-    instructor: "Prof. David Lee",
-    description:
-      "Advanced techniques for solving complex word problems involving multiple variables and constraints.",
+    learningPoints: [
+      "Translating word problems to equations",
+      "Rate and work problem strategies",
+      "Mixture and concentration techniques",
+      "Time management for GRE word problems",
+    ],
   },
 ];
 
@@ -114,9 +126,9 @@ export default function DemoClasses() {
                   <Card className="group cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg p-4 dark:border-orange-800 dark:hover:shadow-gray-700/30">
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src={demoClass.thumbnail.replace("/public", "")} // Correct path by removing /public
+                        src={demoClass.thumbnail.replace("/public", "")}
                         alt={demoClass.title}
-                        fill // Use fill for responsive layout
+                        fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -148,23 +160,19 @@ export default function DemoClasses() {
                   <div className="grid gap-4 py-4">
                     <div className="relative">
                       <HeroVideoDialog
-                        className="block dark:hidden"
+                        className="block"
                         animationStyle="from-center"
-                        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
-                        thumbnailAlt="Hero Video"
-                      />
-                      <HeroVideoDialog
-                        className="hidden dark:block"
-                        animationStyle="from-center"
-                        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                        thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
-                        thumbnailAlt="Hero Video"
+                        videoSrc={demoClass.videoSrc}
+                        thumbnailSrc={demoClass.thumbnail.replace(
+                          "/public",
+                          ""
+                        )}
+                        thumbnailAlt={demoClass.title}
                       />
                     </div>
 
                     <Tabs defaultValue="overview">
-                      <TabsList className="grid w-full gap-3  grid-cols-2">
+                      <TabsList className="grid w-full gap-3 grid-cols-2">
                         <TabsTrigger
                           className="border p-1 rounded-md"
                           value="overview"
@@ -185,10 +193,9 @@ export default function DemoClasses() {
                             What you will learn:
                           </h4>
                           <ul className="ml-5 list-disc space-y-1">
-                            <li>Key concepts and formulas</li>
-                            <li>Problem-solving strategies</li>
-                            <li>Common pitfalls and how to avoid them</li>
-                            <li>Time-saving techniques</li>
+                            {demoClass.learningPoints.map((point, index) => (
+                              <li key={index}>{point}</li>
+                            ))}
                           </ul>
                         </div>
                       </TabsContent>
