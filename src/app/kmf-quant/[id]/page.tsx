@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Clock, Watch } from "lucide-react";
+import { ArrowLeft, Clock } from "lucide-react";
 import { SectionHeader } from "@/components/kmf-quest/Section-header";
 import { questionBank } from "../data";
 import Timer from "@/components/timer";
