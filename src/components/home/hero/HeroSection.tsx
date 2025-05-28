@@ -26,7 +26,7 @@ const fadeIn = {
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden lg:p-20 border-b-2 rounded-xl border-orange-700">
+    <section className="relative overflow-hidden py-10 lg:p-20 border-b-2 rounded-xl border-orange-700">
       <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-orange-100 opacity-50 blur-3xl dark:bg-orange-900"></div>
       <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-blue-100 opacity-30 blur-3xl dark:bg-blue-900"></div>
 

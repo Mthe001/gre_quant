@@ -151,7 +151,7 @@ export default function DemoClasses() {
                   </Card>
                 </DialogTrigger>
 
-                <DialogContent className="lg:w-full w-[98%] rounded-md h-auto">
+                <DialogContent className="lg:w-full w-[98%] rounded-md h-a">
                   <DialogHeader>
                     <DialogTitle>{demoClass.title}</DialogTitle>
                     <DialogDescription>
