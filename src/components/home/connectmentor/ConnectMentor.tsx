@@ -20,12 +20,9 @@ const staggerContainer = {
 
 export default function ConnectMentor() {
   return (
-    <section className="relative overflow-hidden  py-20 ">
-      <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-orange-100 opacity-30 blur-3xl dark:bg-orange-900/20"></div>
-      <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-blue-100 opacity-20 blur-3xl dark:bg-blue-900/20"></div>
-
-      <div className="container w-full overflow-hidden relative border-orange-900 border-t border-b  rounded-lg  mx-auto p-10">
-      <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
+    <section className="relative  mx-auto  lg:py-20 ">
+      <div className="container  border-orange-900 border-t border-b  rounded-lg  mx-auto p-10">
+        <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -50,11 +47,11 @@ export default function ConnectMentor() {
 
           <motion.div
             variants={staggerContainer}
-            className="grid grid-cols-2 gap-4 sm:grid-cols-4"
+            className="grid grid-cols-1 gap-4 lg:grid-cols-4"
           >
             <motion.div variants={fadeIn}>
-              <Card className="group h-full transition-all duration-300 hover:shadow-md cursor-pointer">
-                <CardContent className="flex flex-col items-center justify-center p-6">
+              <Card className="group h-full w-full transition-all duration-300 hover:shadow-md cursor-pointer">
+                <CardContent className="flex flex-col items-center justify-center p-2 lg:p-6">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white dark:bg-orange-900/30">
                     <Phone className="h-8 w-8" />
                   </div>
@@ -107,16 +104,11 @@ export default function ConnectMentor() {
           </motion.div>
 
           <motion.div variants={fadeIn} className="mt-10">
-            <Button
-              size="lg"
-              variant="outline"
-              
-            >
+            <Button size="lg" variant="outline">
               Schedule a Free Consultation
             </Button>
           </motion.div>
         </motion.div>
-         
       </div>
     </section>
   );

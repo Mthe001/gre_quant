@@ -113,7 +113,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 ">
-      <div className="container mx-auto p-16 border-t border-b ">
+      <div className="container mx-auto lg:p-16 border-t border-b ">
         <motion.div
           initial="hidden"
           whileInView="visible"

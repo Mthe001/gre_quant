@@ -156,7 +156,7 @@ const masterVideoResources = [
     id: "m1",
     title: "All Essential Updated GRE Quant Formulas",
     thumbnail: "/images/J4OvkHZlMLg-HD.jpg",
-    videoSrc: "https://www.youtube.com/embed/J4OvkHZlMLg?si=jdZgiyYWMsKJuF5C", // Replace with actual YouTube embed URL
+    videoSrc: "https://www.youtube.com/embed/J4OvkHZlMLg?si=idyspzK8O9710XLy", // Replace with actual YouTube embed URL
     duration: "4:45:05",
     instructor: "Shourav Simantha",
     description: "Comprehensive video guide to all formulas you need to know",
@@ -389,6 +389,9 @@ function MasterVideoCard({ video }: { video: MasterVideoResource }) {
           title: "All Essential Updated GRE Quant Formulas",
           content:
             "This comprehensive video covers all the essential formulas you need to know for GRE Quant, including algebra, geometry, number properties, statistics, and word problems. The video breaks down complex concepts into easy-to-understand segments with visual examples.",
+          thumbnail: "/images/J4OvkHZlMLg-HD.jpg",
+          videoSrc:
+            "https://www.youtube.com/embed/J4OvkHZlMLg?si=idyspzK8O9710XLy",
         };
       case "m2":
         return {

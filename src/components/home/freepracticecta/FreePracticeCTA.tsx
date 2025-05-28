@@ -10,8 +10,8 @@ const fadeIn = {
 
 export default function FreePracticeCTA() {
   return (
-    <section className="bg-gradient-to-r from-orange-500 to-orange-600 py-16  ">
-      <div className="container mx-auto m-10">
+    <section className="bg-gradient-to-r from-orange-500 to-orange-600 py-16 p-2 ">
+      <div className="container mx-auto lg:m-10 m-6">
         <motion.div
           initial="hidden"
           whileInView="visible"

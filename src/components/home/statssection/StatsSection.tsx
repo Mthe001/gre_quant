@@ -16,8 +16,8 @@ const staggerContainer = {
 
 export default function StatsSection() {
   return (
-    <section className="py-20">
-      <div className="container relative mx-auto p-8 border rounded-md ">
+    <section className="py-20 lg:w-full w-[90%] mx-auto">
+      <div className="container relative mx-auto lg:p-8 p-4 border rounded-md ">
         <motion.div
           initial="hidden"
           whileInView="visible"

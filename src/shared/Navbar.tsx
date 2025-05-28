@@ -7,6 +7,7 @@ import { ChevronRight, ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "../lib/utils";
 import { ModeToggle } from "../components/ui/mode-toggle";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 
 
@@ -229,14 +230,15 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button - only visible on smaller screens */}
-            <button
+            <Button
               onClick={toggleMenu}
-              className="rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 lg:hidden"
+              variant={"ghost"}
+              className="rounded-md p-2  focus:ring-2  lg:hidden"
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               <Menu className={cn("h-6 w-6", isOpen ? "hidden" : "block")} />
               <X className={cn("h-6 w-6", isOpen ? "block" : "hidden")} />
-            </button>
+            </Button>
           </div>
         </div>
       </header>

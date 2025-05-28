@@ -70,8 +70,8 @@ const batches = [
 
 const UpcomingBatch = () => {
   return (
-    <section className="py-20">
-      <div className="container mx-auto p-10 rounded-md border">
+    <section className="py-20 px-2">
+      <div className="container mx-auto lg:p-10 p-2 rounded-md border">
         <motion.div
           initial="hidden"
           whileInView="visible"
